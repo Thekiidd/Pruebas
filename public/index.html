@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw + OpenRouter</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>OpenClaw Agent Web</h1>
+    <p class="subtitle">Conecta tu agente con un modelo gratis de OpenRouter.</p>
+
+    <section class="card">
+      <label for="model">Modelo OpenRouter (gratis)</label>
+      <input id="model" value="meta-llama/llama-3.1-8b-instruct:free" />
+
+      <label for="prompt">Tu mensaje</label>
+      <textarea id="prompt" rows="5" placeholder="Ejemplo: Ayúdame a crear mi flujo para OpenClaw"></textarea>
+
+      <button id="sendBtn">Enviar</button>
+    </section>
+
+    <section class="card">
+      <h2>Respuesta</h2>
+      <pre id="result">Aquí aparecerá la respuesta del agente…</pre>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
