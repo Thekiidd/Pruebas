@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw + OpenRouter</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>OpenClaw Agent Web</h1>
+    <p class="subtitle">Funciona con backend Node o en GitHub Pages (modo estático).</p>
+
+    <section class="card">
+      <label for="mode">Modo</label>
+      <select id="mode">
+        <option value="auto" selected>Auto (recomendado)</option>
+        <option value="backend">Backend seguro (/api/chat)</option>
+        <option value="client">Cliente directo (GitHub Pages)</option>
+      </select>
+
+      <div id="apiKeyWrap" class="hidden">
+        <label for="apiKey">OpenRouter API Key (solo modo cliente)</label>
+        <input id="apiKey" type="password" placeholder="sk-or-v1-..." autocomplete="off" />
+        <p class="hint">⚠️ En modo cliente, la key vive en tu navegador y puede exponerse.</p>
+      </div>
+
+      <label for="model">Modelo OpenRouter (gratis)</label>
+      <input id="model" value="meta-llama/llama-3.1-8b-instruct:free" />
+
+      <label for="prompt">Tu mensaje</label>
+      <textarea id="prompt" rows="5" placeholder="Ejemplo: Ayúdame a crear mi flujo para OpenClaw"></textarea>
+
+      <button id="sendBtn">Enviar</button>
+    </section>
+
+    <section class="card">
+      <h2>Estado</h2>
+      <p id="status">Listo.</p>
+      <h2>Respuesta</h2>
+      <pre id="result">Aquí aparecerá la respuesta del agente…</pre>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

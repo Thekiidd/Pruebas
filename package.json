@@ -1,0 +1,11 @@
+{
+  "name": "openclaw-openrouter-web",
+  "version": "1.0.0",
+  "description": "Interfaz web simple para un agente OpenClaw usando OpenRouter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "license": "MIT"
+}
