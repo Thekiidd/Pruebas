@@ -1,10 +1,20 @@
 # OpenClaw Web + OpenRouter (modelo gratis)
 
-Web mínima para enviar prompts desde navegador a OpenRouter usando un modelo gratuito.
+Esta app ahora soporta **2 modos**:
 
-## 1) Configurar variables
+1. **Backend seguro (Node.js):** recomendado para producción.
+2. **Cliente directo (estático / GitHub Pages):** funciona sin servidor, pero tu API key se usa en navegador.
 
-Crea un `.env` (o exporta variables) con:
+## ¿En GitHub Pages funciona?
+
+Sí, pero con una limitación importante: GitHub Pages solo sirve archivos estáticos, así que **no puede ejecutar `server.js`** ni proteger secretos en backend.
+
+- Si publicas en Pages, usa el modo **Cliente directo**.
+- Si quieres seguridad real de API key, despliega backend (Render, Railway, Fly, VPS, etc.) y usa modo **Backend**.
+
+## 1) Ejecutar en local con backend (seguro)
+
+Configura variables:
 
 ```bash
 export OPENROUTER_API_KEY="tu_api_key"
@@ -13,17 +23,26 @@ export OPENROUTER_APP_NAME="OpenClaw Web Agent"
 export PORT=3000
 ```
 
-## 2) Ejecutar
+Luego ejecuta:
 
 ```bash
 npm run start
 ```
 
-## 3) Usar
+Abre `http://localhost:3000`.
 
-Abre `http://localhost:3000`, escribe tu prompt y pulsa **Enviar**.
+## 2) Publicar en GitHub Pages (estático)
 
-## Notas
+Ya se incluyó workflow automático en `.github/workflows/deploy-pages.yml`.
 
-- No expongas tu API key en frontend.
-- Modelo default: `meta-llama/llama-3.1-8b-instruct:free`.
+Pasos:
+
+1. Sube este repo a GitHub.
+2. En GitHub, entra a **Settings → Pages** y selecciona **GitHub Actions** como source.
+3. Haz push a `main` (o ejecuta el workflow manualmente si lo adaptas).
+4. En la web publicada, selecciona **Modo cliente** (o Auto con key) y pega tu API key para probar.
+
+## Seguridad
+
+- **Nunca** hardcodees la API key en `app.js` o `index.html`.
+- Si compartiste una key en público, revócala y genera otra.
