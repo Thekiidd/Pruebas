@@ -5,6 +5,15 @@ Esta app ahora soporta **2 modos**:
 1. **Backend seguro (Node.js):** recomendado para producción.
 2. **Cliente directo (estático / GitHub Pages):** funciona sin servidor, pero tu API key se usa en navegador.
 
+## Estructura de archivos (en raíz)
+
+- `index.html`
+- `styles.css`
+- `app.js`
+- `server.js`
+
+> Así sí vas a ver el `index` y `styles` directamente en tu repo, sin entrar a carpeta `public`.
+
 ## ¿En GitHub Pages funciona?
 
 Sí, pero con una limitación importante: GitHub Pages solo sirve archivos estáticos, así que **no puede ejecutar `server.js`** ni proteger secretos en backend.

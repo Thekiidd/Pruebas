@@ -106,17 +106,17 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
-    serveStaticFile(res, path.join(__dirname, 'public', 'index.html'));
+    serveStaticFile(res, path.join(__dirname, 'index.html'));
     return;
   }
 
   if (req.method === 'GET' && req.url === '/styles.css') {
-    serveStaticFile(res, path.join(__dirname, 'public', 'styles.css'));
+    serveStaticFile(res, path.join(__dirname, 'styles.css'));
     return;
   }
 
   if (req.method === 'GET' && req.url === '/app.js') {
-    serveStaticFile(res, path.join(__dirname, 'public', 'app.js'));
+    serveStaticFile(res, path.join(__dirname, 'app.js'));
     return;
   }
 
