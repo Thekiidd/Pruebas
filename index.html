@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathSnap Free - Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjs@13/lib/browser/math.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/function-plot@1/dist/function-plot.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>MathSnap Free</h1>
+      <p class="subtitle">Sube una imagen o escribe una ecuación para resolver y graficar (100% gratis).</p>
+
+      <section class="card">
+        <h2>1) OCR desde imagen</h2>
+        <input id="imageInput" type="file" accept="image/*" />
+        <button id="ocrBtn">Transcribir imagen</button>
+        <p id="ocrStatus" class="muted">Sin imagen procesada.</p>
+      </section>
+
+      <section class="card">
+        <h2>2) Ecuación</h2>
+        <label for="equationInput">Formato sugerido: <code>x^2-5*x+6=0</code> o <code>sin(x)</code></label>
+        <textarea id="equationInput" rows="3" placeholder="Escribe o edita la ecuación detectada..."></textarea>
+        <div class="actions">
+          <button id="solveBtn">Resolver</button>
+          <button id="graphBtn">Graficar</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3) Resultado</h2>
+        <pre id="resultBox">Aún no hay resultados.</pre>
+      </section>
+
+      <section class="card">
+        <h2>4) Gráfica</h2>
+        <div id="plot"></div>
+      </section>
+    </main>
+  </body>
+</html>
